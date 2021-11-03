@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.integrador_android.databinding.FragmentMainBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -33,6 +34,13 @@ class MainFragment : Fragment() {
         savedInstaceState: Bundle?
     ): View? {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
+
+        binding.button2.setOnClickListener {
+            val action = MainFragmentDirections.actionMainFragmentToTermsAndConditionsFragment()
+
+            findNavController().navigate(action)
+        }
+
         return binding.root
     }
 
