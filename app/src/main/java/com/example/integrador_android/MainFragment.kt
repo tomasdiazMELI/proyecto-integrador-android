@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.integrador_android.databinding.FragmentMainBinding
+import androidx.appcompat.app.AppCompatActivity
+
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +29,9 @@ class MainFragment : Fragment() {
 
     override fun onCreate(savedInstaceState: Bundle?){
         super.onCreate(savedInstaceState)
-        setHasOptionsMenu(true)
+        // Oculta el action bar de todas las vistas, debido a que oculta de la actividad
+        // activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+        setHasOptionsMenu(false)
     }
 
     override fun onCreateView(
@@ -35,13 +41,23 @@ class MainFragment : Fragment() {
     ): View? {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
 
-        binding.button2.setOnClickListener {
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.tvTermsAndConditions.setOnClickListener{
             val action = MainFragmentDirections.actionMainFragmentToTermsAndConditionsFragment()
 
             findNavController().navigate(action)
         }
 
-        return binding.root
+        binding.btnStart.setOnClickListener{
+            val action = MainFragmentDirections.actionMainFragmentToActivityListFragment()
+
+            findNavController().navigate(action)
+        }
     }
 
     override fun onDestroyView() {
