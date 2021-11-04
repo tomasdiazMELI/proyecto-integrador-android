@@ -9,17 +9,23 @@
     <string name="relaxation">Relaxation</string>
     <string name="music">Music</string>
     <string name="busywork">Busywork</string>
-
-
+    <string name="random">Random</string>
 
     <string name="app_name">integrador-android</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Label Fragments -->
+    <string name="suggestion_fragment_label">{activity}</string>
+    <string name="main_fragment_Label">Start</string>
+    <string name="activity_list_fragment_Label">Activities</string>
+    <string name="terms_fragment_label">Terms and conditions</string>
+
     <string name="not_bored">Not Bored</string>
     <string name="participants_hint">Participants</string>
     <string name="start_btn">Start</string>
     <string name="term_and_conditions"><u>Terms and conditions</u></string>
     <string name="get_btn">Get</string>
+    <string name="try_btn">Try Another</string>
+    <string name="price">Price</string>
     <string name="text_term_and_conditions">
         <p>
             Lorem ipsum dolor sit amet consectetur adipiscing elit inceptos ridiculus iaculis,

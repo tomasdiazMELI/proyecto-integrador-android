@@ -39,9 +39,10 @@ class ItemAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
 
-        holder.textView.text = context.resources.getString(item.stringResourceId)
+        val textActivity = context.resources.getString(item.stringResourceId)
+        holder.textView.text = textActivity
         holder.button.setOnClickListener {
-            val action = ActivityListFragmentDirections.actionActivityListFragmentToSuggestionFragment()
+            val action = ActivityListFragmentDirections.actionActivityListFragmentToSuggestionFragment(textActivity)
             holder.view.findNavController().navigate(action)
         }
     }
