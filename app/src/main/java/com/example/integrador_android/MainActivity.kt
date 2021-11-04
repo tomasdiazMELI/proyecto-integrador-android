@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.integrador_android.databinding.ActivityMainBinding
+import com.example.integrador_android.model.ActivityClass
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

@@ -1,4 +1,4 @@
-package com.example.integrador_android
+package com.example.integrador_android.model
 
 class ActivityClass {
     lateinit var name : String
