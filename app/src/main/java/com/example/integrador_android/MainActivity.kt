@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
 
     private val activities = mutableListOf<ActivityClass>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
+
 
 
     // permite conectar con la api breed

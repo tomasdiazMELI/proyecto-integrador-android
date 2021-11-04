@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.integrador_android.databinding.FragmentMainBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -23,10 +24,15 @@ class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
+
     override fun onCreate(savedInstaceState: Bundle?){
         super.onCreate(savedInstaceState)
         setHasOptionsMenu(true)
+
+
     }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,7 +42,7 @@ class MainFragment : Fragment() {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
 
         binding.button2.setOnClickListener {
-            val action = MainFragmentDirections.actionMainFragmentToTermsAndConditionsFragment()
+            val action = MainFragmentDirections.actionMainFragmentToActivityListFragment()
 
             findNavController().navigate(action)
         }
