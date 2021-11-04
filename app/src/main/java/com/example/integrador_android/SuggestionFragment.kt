@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.integrador_android.adapter.ItemAdapter
 import com.example.integrador_android.databinding.FragmentSuggestionBinding
 import com.example.integrador_android.model.ActivityClass
+import com.example.integrador_android.network.ActivityApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-
+import java.lang.Exception
 
 
 /**
@@ -47,13 +47,21 @@ class SuggestionFragment : Fragment() {
         _binding = FragmentSuggestionBinding.inflate(layoutInflater, container, false)
         // Inflate the layout for this fragment
 
-
-        llamarACourutine()
+        getActivityApi()
         return binding.root
     }
 
-    private fun llamarACourutine() {
+    private fun getActivityApi() {
         CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val result = ActivityApi.retrofitService.getActivity("busywork")
+                val lala = result
+            } catch (e: Exception) {
+                throw e
+            }
+
+        }
+        /* CoroutineScope(Dispatchers.IO).launch {
             //llame a retroFIT
             //agarre la query y la busque en la url
 
@@ -81,7 +89,7 @@ class SuggestionFragment : Fragment() {
                     //adapter.notifyDataSetChanged()
                 }*/
             }
-        }
+        } */
     }
 
 
@@ -90,11 +98,5 @@ class SuggestionFragment : Fragment() {
         _binding = null
     }
 
-    private fun getRetroFit() : Retrofit {
-        return Retrofit.Builder()
-            .baseUrl("http://www.boredapi.com/api/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
 
 }
