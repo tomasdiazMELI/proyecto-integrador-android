@@ -1,19 +1,16 @@
 package com.example.integrador_android
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.integrador_android.databinding.FragmentSuggestionBinding
+import kotlin.properties.Delegates
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SuggestionFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SuggestionFragment : Fragment() {
+
     companion object {
         const val ACTIVITY = "activity"
     }
@@ -21,15 +18,19 @@ class SuggestionFragment : Fragment() {
     private var _binding: FragmentSuggestionBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var activity: String
+    private lateinit var activityValue: String
+    private var participantsValue: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
 
         arguments?.let {
-            activity = it.get(ACTIVITY).toString()
+            activityValue = it.get(ACTIVITY).toString()
         }
+
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+        participantsValue = sharedPref?.getInt(getString(R.string.saved_participants_key), 1)
     }
 
     override fun onCreateView(
@@ -44,7 +45,9 @@ class SuggestionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tvActivity.text = activity
+        binding.tvActivity.text = activityValue
+
+        binding.tvCantParticipants.text = participantsValue.toString()
     }
 
     override fun onDestroyView() {
