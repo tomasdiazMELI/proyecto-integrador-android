@@ -3,7 +3,7 @@ package com.example.integrador_android.data
 import com.example.integrador_android.R
 import com.example.integrador_android.model.Activity
 
-class Datasource {
+class Datasource() {
     fun loadActivities(): List<Activity> {
         return listOf<Activity>(
             Activity(R.string.education),
