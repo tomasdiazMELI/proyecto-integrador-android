@@ -14,11 +14,9 @@ import com.example.integrador_android.databinding.FragmentSuggestionBinding
  * create an instance of this fragment.
  */
 class SuggestionFragment : Fragment() {
-
     companion object {
         const val ACTIVITY = "activity"
     }
-
 
     private var _binding: FragmentSuggestionBinding? = null
     private val binding get() = _binding!!

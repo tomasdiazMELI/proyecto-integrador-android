@@ -8,6 +8,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.integrador_android.MainFragment"
+        android:label="@string/main_fragment_Label"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_termsAndConditionsFragment"
@@ -19,12 +20,12 @@
     <fragment
         android:id="@+id/termsAndConditionsFragment"
         android:name="com.example.integrador_android.TermsAndConditionsFragment"
-        android:label="@string/term_and_conditions"
+        android:label="@string/terms_fragment_label"
         tools:layout="@layout/fragment_terms_and_conditions" />
     <fragment
         android:id="@+id/activityListFragment"
         android:name="com.example.integrador_android.ActivityListFragment"
-        android:label="fragment_activity_list"
+        android:label="@string/activity_list_fragment_Label"
         tools:layout="@layout/fragment_activity_list">
         <action
             android:id="@+id/action_activityListFragment_to_suggestionFragment"
