@@ -19,6 +19,7 @@
     <string name="participants_hint">Participants</string>
     <string name="start_btn">Start</string>
     <string name="term_and_conditions"><u>Terms and conditions</u></string>
+    <string name="get_btn">Get</string>
     <string name="text_term_and_conditions">
         <p>
             Lorem ipsum dolor sit amet consectetur adipiscing elit inceptos ridiculus iaculis,
