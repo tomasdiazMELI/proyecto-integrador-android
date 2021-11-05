@@ -11,7 +11,13 @@
     <string name="busywork">Busywork</string>
     <string name="random">Random</string>
 
-    <string name="app_name">integrador-android</string>
+    <string name="app_name">Not Bored</string>
+
+    <!-- Label Prices -->
+    <string name="free">Free</string>
+    <string name="low">Low</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
 
     <!-- Label Fragments -->
     <string name="suggestion_fragment_label">{activity}</string>

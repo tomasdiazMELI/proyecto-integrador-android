@@ -8,12 +8,12 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.integrador_android.databinding.ActivityMainBinding
 import com.example.integrador_android.model.ActivityClass
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
 
     private val activities = mutableListOf<ActivityClass>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
@@ -31,15 +31,6 @@ class MainActivity : AppCompatActivity() {
     // Permite controlar la navegación hacía atras
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
-    }
-
-
-    // permite conectar con la api breed
-    private fun getRetroFit() : Retrofit {
-        return Retrofit.Builder()
-            .baseUrl("https://dog.ceo/api/breed/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
     }
 }
 

@@ -7,31 +7,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.integrador_android.databinding.FragmentMainBinding
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.core.widget.doOnTextChanged
 
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MainFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MainFragment : Fragment() {
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
+
     override fun onCreate(savedInstaceState: Bundle?){
         super.onCreate(savedInstaceState)
-        // Oculta el action bar de todas las vistas, debido a que oculta de la actividad
-        // activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-        setHasOptionsMenu(false)
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -41,19 +31,7 @@ class MainFragment : Fragment() {
     ): View? {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
 
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.tvTermsAndConditions.setOnClickListener{
-            val action = MainFragmentDirections.actionMainFragmentToTermsAndConditionsFragment()
-
-            findNavController().navigate(action)
-        }
-
-        binding.btnStart.setOnClickListener{
+        binding.btnStart.setOnClickListener {
             val isValid: Boolean = validateResponse(binding.inputParticipants.text.toString())
 
             if(isValid){
@@ -71,6 +49,13 @@ class MainFragment : Fragment() {
                 findNavController().navigate(action)
             }
         }
+
+        binding.tvTermsAndConditions.setOnClickListener{
+            val action = MainFragmentDirections.actionMainFragmentToTermsAndConditionsFragment()
+            findNavController().navigate(action)
+        }
+
+        return binding.root
     }
 
     private fun validateResponse(text: String) : Boolean {
