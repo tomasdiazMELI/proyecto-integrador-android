@@ -25,11 +25,14 @@
     <string name="activity_list_fragment_Label">Activities</string>
     <string name="terms_fragment_label">Terms and conditions</string>
 
+    <!-- Errors -->
     <string name="error_empty">Can\'t be empty</string>
     <string name="error_zero">Can\'t be zero</string>
 
+    <!-- Preference Key -->
     <string name="saved_participants_key">saved_participants_key</string>
 
+    <!-- Miscellaneous -->
     <string name="not_bored">Not Bored</string>
     <string name="participants_hint">Participants</string>
     <string name="start_btn">Start</string>

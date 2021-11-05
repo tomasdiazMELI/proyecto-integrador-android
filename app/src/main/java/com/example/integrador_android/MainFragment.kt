@@ -18,7 +18,6 @@ class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
-
     override fun onCreate(savedInstaceState: Bundle?){
         super.onCreate(savedInstaceState)
         setHasOptionsMenu(true)

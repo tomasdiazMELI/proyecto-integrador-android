@@ -13,6 +13,7 @@ import retrofit2.http.QueryMap
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
+
 private const val BASE_URL =
     "http://www.boredapi.com/api/"
 
