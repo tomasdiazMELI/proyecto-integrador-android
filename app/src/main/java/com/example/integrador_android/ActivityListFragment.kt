@@ -1,10 +1,9 @@
 package com.example.integrador_android
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.integrador_android.adapter.ItemAdapter
@@ -51,5 +50,20 @@ class ActivityListFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.layout_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.action_random -> {
+                val action = ActivityListFragmentDirections.actionActivityListFragmentToSuggestionFragment(getString(R.string.random))
+                findNavController().navigate(action)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
