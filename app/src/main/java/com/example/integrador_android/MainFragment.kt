@@ -32,6 +32,7 @@ class MainFragment : Fragment() {
         // Oculta el action bar de todas las vistas, debido a que oculta de la actividad
         // activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         setHasOptionsMenu(false)
+
     }
 
     override fun onCreateView(

@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        getActionBar()?.hide();
 
         // Obtener una referencia al Host de la navegación
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
