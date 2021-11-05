@@ -10,11 +10,11 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.integrador_android.ActivityListFragmentDirections
 import com.example.integrador_android.R
-import com.example.integrador_android.model.Activity
+import com.example.integrador_android.model.ActivityModel
 
 class ItemAdapter(
     private val context: Context,
-    private val dataset: List<Activity>
+    private val dataset: List<ActivityModel>
 ): RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(val view: View): RecyclerView.ViewHolder(view) {

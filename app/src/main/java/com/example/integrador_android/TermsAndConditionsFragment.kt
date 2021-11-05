@@ -12,11 +12,6 @@ import com.example.integrador_android.databinding.FragmentTermsAndConditionsBind
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [TermsAndConditionsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TermsAndConditionsFragment : Fragment() {
     private var _binding: FragmentTermsAndConditionsBinding? = null
     private val binding get() = _binding!!

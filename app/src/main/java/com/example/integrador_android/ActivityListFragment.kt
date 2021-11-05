@@ -10,16 +10,10 @@ import com.example.integrador_android.adapter.ItemAdapter
 import com.example.integrador_android.data.Datasource
 import com.example.integrador_android.databinding.FragmentActivityListBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ActivityListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ActivityListFragment : Fragment() {
 
     private var _binding: FragmentActivityListBinding? = null
     private val binding get() = _binding!!
-    private var participants: Int = 0
 
     private lateinit var recyclerView: RecyclerView
 
@@ -33,7 +27,6 @@ class ActivityListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentActivityListBinding.inflate(inflater, container, false)
-        // Inflate the layout for this
         return binding.root
     }
 
@@ -50,10 +43,12 @@ class ActivityListFragment : Fragment() {
         _binding = null
     }
 
+    // Inflate Menu Layout
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.layout_menu, menu)
     }
 
+    // Event handler
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
             R.id.action_random -> {
