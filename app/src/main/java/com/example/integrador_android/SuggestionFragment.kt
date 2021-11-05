@@ -19,12 +19,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SuggestionFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SuggestionFragment : Fragment() {
 
     companion object {

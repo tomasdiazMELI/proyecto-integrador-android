@@ -11,7 +11,7 @@ data class ActivityResponse (
     val error: String?
 )
 
-/* {
+/* { Example Response API
 "activity":"Start a blog for something you're passionate about",
 "type":"recreational",
 "participants":1,
